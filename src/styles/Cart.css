@@ -1,0 +1,63 @@
+
+.itemlistparent {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 20px auto;
+    max-width: 800px;
+  }
+  
+  
+  .itemlistchild {
+    width: 100%;
+    padding: 10px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+
+  .itemlistchild button {
+    background-color: green;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  
+  .itemlistchild button:hover {
+    background-color: rgb(87, 144, 87);
+  }
+  
+  
+  .itemlistchild p {
+    text-align: center;
+    font-size: 18px;
+    color: #333333;
+  }
+  
+  
+  @media (max-width: 768px) {
+    .itemlistparent {
+      padding: 15px;
+      margin: 10px;
+    }
+  
+    .itemlistchild {
+      padding: 8px;
+    }
+  
+    .itemlistchild p {
+      font-size: 16px;
+    }
+  }
+  

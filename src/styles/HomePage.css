@@ -1,0 +1,62 @@
+@import url('https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&family=Tiny5&display=swap');
+
+
+body {
+  background-color: rgb(223, 215, 215);
+}
+
+.items {
+  margin-top: 20%;
+}
+
+.title-parent {
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #f6f6f6;
+}
+
+.title-child {
+  font-family: 'Pokemon Solid', sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #ffcc00;
+  scale: 1.5;
+  -webkit-text-stroke: 2px black;
+}
+
+
+.shopping-page {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.product-card {
+  font-family: "Pixelify Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: <weight>;
+  font-style: normal;
+  height: fit-content;
+  width: 15%; /* Adjust width for responsiveness */
+  gap: 10px;
+  border: 1px solid #121111;
+  color: rgb(59, 24, 230);
+  border-radius: 10px;
+  padding: 15px;
+  margin: 10px;
+  text-align: center;
+  transition: transform 0.5s ease, box-shadow 0.3s ease; /* Added box-shadow transition */
+}
+
+.product-card:hover {
+  transform: scale(1.1);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Added shadow for better hover effect */
+}
+
+.product-image {
+  max-width: 100%;
+  height: auto;
+  margin-bottom: 10px;
+}

@@ -1,0 +1,96 @@
+/* Product List Container */
+.CheckOutProductList {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Title styling */
+.CheckOutProductList h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+  text-align: center;
+  color: #333;
+}
+
+/* Product card container */
+.product-card-cart {
+  display: flex;
+  align-items: center;
+  padding: 15px;
+  margin-bottom: 15px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  gap: 50px;
+}
+
+
+.image-wrapper {
+  width: 100px; /* Fixed width */
+  height: 100px; /* Fixed height */
+  margin-right: 15px; /* Space between image and text */
+  overflow: hidden; /* Hide overflow to ensure images fit inside */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 8px; /* Rounded corners */
+  background-color: #f0f0f0; /* Optional background color */
+}
+
+/* Product image styling */
+.product-card-cart img {
+  width: 100px; /* Ensure the image fits the wrapper */
+  height: 100px; /* Ensure the image fits the wrapper */
+  object-fit: cover; /* Maintain aspect ratio while covering the area */
+  margin: 20px;
+}
+
+/* Product name styling */
+.product-card-cart h3 {
+  font-size: 20px;
+  margin: 0 0 10px;
+  color: #333;
+  flex: 1; /* Allow the text to take up available space */
+}
+
+/* Product details (amount and price) styling */
+.product-card-cart p {
+  margin: 5px 0;
+  color: #666;
+}
+
+/* Product amount and price bold styling */
+.product-card-cart p:nth-of-type(4),
+.product-card-cart p:nth-of-type(5) {
+  font-weight: bold;
+  color: #444;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .product-card-cart {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .image-wrapper {
+    margin-right: 0;
+    margin-bottom: 10px;
+    width: 100px; /* Make wrapper responsive */
+    height: auto; /* Adjust height automatically */
+  }
+
+  .product-card-cart img {
+    width: 100px; /* Ensure image fits the wrapper */
+    height: auto; /* Maintain aspect ratio */
+  }
+
+  .product-card-cart h3,
+  .product-card-cart p {
+    text-align: center;
+  }
+}
