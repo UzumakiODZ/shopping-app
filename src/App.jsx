@@ -4,7 +4,7 @@ import HomePage from './components/HomePage';
 import Cart from './components/Cart';
 
 function App() {
-  // Load initial productData from session storage or set default values
+  
   const [productData, setProductData] = useState(() => {
     const savedData = sessionStorage.getItem('productData');
     return savedData ? JSON.parse(savedData) : [
@@ -39,7 +39,7 @@ function App() {
     ];
   });
 
-  // Save productData to session storage whenever it changes
+  
   useEffect(() => {
     try {
       const dataToSave = JSON.stringify(productData);
@@ -50,7 +50,7 @@ function App() {
     }
   }, [productData]);
 
-  // Function to update the amt in productData
+  
   const updateAmt = (id) => {
     setProductData(prevData =>
       prevData.map(product => 
@@ -59,11 +59,11 @@ function App() {
     );
   };
 
-  // Function to remove item from the cart
+  
   const removeFromCart = (id) => {
     setProductData(prevData =>
       prevData.map(product =>
-        product.id === id ? { ...product, amt: Math.max(product.amt - 1, 0) } : product
+        product.id === id ? { ...product, amt: product.amt - 1 } : product
       )
     );
   };
@@ -72,7 +72,7 @@ function App() {
     <Router>
       <div className="App">
         <Routes>
-          {/* Pass productData, updateAmt, and removeFromCart as props */}
+          
           <Route 
             path="/" 
             element={<HomePage productData={productData} updateAmt={updateAmt} removeFromCart={removeFromCart} />} 

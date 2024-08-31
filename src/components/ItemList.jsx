@@ -9,6 +9,7 @@ const Product = ({ product, updateAmt, removeFromCart }) => {
 
   const handleRemoveFromCart = () => {
     removeFromCart(id);
+    
   };
 
   return (

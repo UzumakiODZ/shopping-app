@@ -1,10 +1,10 @@
 import React, { forwardRef } from 'react';
 import Header from './Header';
 import Items from './Item';
-import '/src/styles/HomePage.css'; // Adjust path if needed
+import '/src/styles/HomePage.css';
 
 const HomePage = forwardRef(({ productData, updateAmt, removeFromCart }, ref) => {
-  // Calculate total cart items count
+
   const cartItemCount = productData.reduce((acc, product) => acc + product.amt, 0);
 
   return (
@@ -18,7 +18,7 @@ const HomePage = forwardRef(({ productData, updateAmt, removeFromCart }, ref) =>
           <Items 
             productData={productData} 
             updateAmt={updateAmt} 
-            removeFromCart={removeFromCart} // Pass removeFromCart prop
+            removeFromCart={removeFromCart} 
           />
         </div>
       </div>

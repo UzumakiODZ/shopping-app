@@ -7,7 +7,7 @@ const ProductList = ({ productData }) => {
     return <p>No products available.</p>;
   }
 
-  // Filter products to only include those with amt > 0
+  
   const filteredProducts = productData.filter(product => product.amt > 0);
 
   return (
@@ -18,9 +18,10 @@ const ProductList = ({ productData }) => {
           <div key={product.id} className="product-card-cart">
             <img src={product.image} alt={product.name} className="product-image" />
             <h3 className='product-name'>{product.name}</h3>
-            <p>Amount: {product.amt}</p>
             <p>Price: ${product.price}</p>
-            <button onClick={handleAddToCart}>Add to Cart</button>
+            <button onClick={() => handleAddToCart(product)}>+</button>
+            <p>{product.amt}</p>
+            <button onClick={() => handleRemoveFromCart(product)}>-</button>
           </div>
         ))
       ) : (
