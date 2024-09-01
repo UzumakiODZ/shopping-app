@@ -1,6 +1,7 @@
 import React from 'react';
-import "/src/styles/Header.css";                                                                
+import "./styles/Header.css"; // Adjusted import path
 import { Link } from 'react-router-dom';
+import cartpic from "./assets/shopping-cart-outline.svg"; // Adjusted import path
 
 const Header = ({ cartItemCount }) => {
   return (
@@ -10,7 +11,7 @@ const Header = ({ cartItemCount }) => {
         <div className='nav-pages'>
           <Link className='nav-links' to="/">Home</Link>
           <Link className='nav-links' to="/cart">
-            <img src="./src/assets/shopping-cart-outline.svg" alt="Cart" height="50px"/>
+            <img src={cartpic} alt="Cart" height="50px"/>
              <span className="cart-count">{cartItemCount}</span>
           </Link>
         </div>
