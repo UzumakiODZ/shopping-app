@@ -1,7 +1,7 @@
 import React from 'react';
-import "./styles/Header.css"; // Adjusted import path
+import "/src/styles/Header.css"; 
 import { Link } from 'react-router-dom';
-import cartpic from "./assets/shopping-cart-outline.svg"; // Adjusted import path
+import cartpic from "./assets/shopping-cart-outline.svg"; 
 
 const Header = ({ cartItemCount }) => {
   return (
