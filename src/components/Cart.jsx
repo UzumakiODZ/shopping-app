@@ -3,18 +3,21 @@ import Header from './Header';
 import ProductList from './CheckoutItem'; 
 import "/src/styles/Cart.css";
 
-const Cart = ({ productData }) => {
-
-  console.log('Current productData in Cart:', productData);
+const Cart = ({ productData, updateAmt, removeFromCart }) => {
 
   return (
     <div>
       <Header />
+      <div className='cart'>
       <div className='itemlistparent'>
         <div className='itemlistchild'>
           {productData && productData.length > 0 ? (
             <>
-              <ProductList productData={productData} />
+              <ProductList 
+                productData={productData} 
+                updateAmt={updateAmt} 
+                removeFromCart={removeFromCart} 
+              />
               <button>Checkout</button>
             </>
           ) : (
@@ -22,6 +25,7 @@ const Cart = ({ productData }) => {
           )}
         </div>
       </div>
+    </div>
     </div>
   );
 };

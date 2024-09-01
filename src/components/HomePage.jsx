@@ -4,7 +4,6 @@ import Items from './Item';
 import '/src/styles/HomePage.css';
 
 const HomePage = forwardRef(({ productData, updateAmt, removeFromCart }, ref) => {
-
   const cartItemCount = productData.reduce((acc, product) => acc + product.amt, 0);
 
   return (

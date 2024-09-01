@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 const Product = ({ product, updateAmt, removeFromCart }) => {
   const { name, image, price, description, id, amt } = product;
@@ -9,7 +10,6 @@ const Product = ({ product, updateAmt, removeFromCart }) => {
 
   const handleRemoveFromCart = () => {
     removeFromCart(id);
-    
   };
 
   return (
@@ -26,6 +26,19 @@ const Product = ({ product, updateAmt, removeFromCart }) => {
       </div>
     </div>
   );
+};
+
+Product.propTypes = {
+  product: PropTypes.shape({
+    id: PropTypes.number.isRequired,
+    name: PropTypes.string.isRequired,
+    image: PropTypes.string.isRequired,
+    price: PropTypes.number.isRequired,
+    description: PropTypes.string,
+    amt: PropTypes.number.isRequired,
+  }).isRequired,
+  updateAmt: PropTypes.func.isRequired,
+  removeFromCart: PropTypes.func.isRequired,
 };
 
 export default Product;
