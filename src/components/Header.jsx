@@ -10,7 +10,7 @@ const Header = ({ cartItemCount }) => {
         <div className='nav-pages'>
           <Link className='nav-links' to="/">Home</Link>
           <Link className='nav-links' to="/cart">
-            <img src="\src\assets\shopping-cart-outline.svg" alt="Cart" height="50px"/>
+            <img src="/src/assets/shopping-cart-outline.svg" alt="Cart" height="50px"/>
              <span className="cart-count">{cartItemCount}</span>
           </Link>
         </div>
