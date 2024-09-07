@@ -53,10 +53,17 @@
   }
   
   .cart-count {
+    position: absolute;
+    margin-left: 80%;
+    margin-top: 70%;
     color: #fff;
     border-radius: 50%;
     padding: 0 8px;
     font-size: 14px;
+    z-index: 1;
+  }
+  .group-cart{
+    position: relative;
   }
   
   @media (max-width: 768px) {
