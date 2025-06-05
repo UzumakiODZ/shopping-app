@@ -26,10 +26,12 @@ const ProductList = ({ productData, updateAmt, removeFromCart }) => {
           <div key={product.id} className="product-card-cart">
             <img src={product.image} alt={product.name} className="product-image" />
             <h3 className='product-name'>{product.name}</h3>
-            <p>Price: ${product.price}</p>
-            <button onClick={() => handleAddToCart(product.id)}>+</button>
-            <p>{product.amt}</p>
-            <button onClick={() => handleRemoveFromCart(product.id)}>-</button>
+            <div>Price: ${product.price}</div>
+            <div style={{ display: 'flex', flexDirection: 'row', alignItems: 'center' }}>
+              <button onClick={() => handleAddToCart(product.id)}>+</button>
+              <p>{product.amt}</p>
+              <button onClick={() => handleRemoveFromCart(product.id)}>-</button>
+            </div>
           </div>
         ))
       ) : (

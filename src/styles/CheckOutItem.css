@@ -1,6 +1,5 @@
 /* Product List Container */
 .CheckOutProductList {
-  max-width: 800px;
   margin: 0 auto;
   padding: 20px;
   background-color: #f9f9f9;
@@ -20,12 +19,12 @@
 .product-card-cart {
   display: flex;
   align-items: center;
+  justify-content: space-between;
   padding: 15px;
   margin-bottom: 15px;
   background-color: #fff;
   border-radius: 8px;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
-  gap: 50px;
 }
 
 
@@ -54,7 +53,6 @@
   font-size: 20px;
   margin: 0 0 10px;
   color: #333;
-  flex: 1; /* Allow the text to take up available space */
 }
 
 /* Product details (amount and price) styling */
@@ -70,27 +68,12 @@
   color: #444;
 }
 
-/* Responsive adjustments */
-@media (max-width: 768px) {
-  .product-card-cart {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  .image-wrapper {
-    margin-right: 0;
-    margin-bottom: 10px;
-    width: 100px; /* Make wrapper responsive */
-    height: auto; /* Adjust height automatically */
-  }
-
+@media (max-width: 508px) {
   .product-card-cart img {
-    width: 100px; /* Ensure image fits the wrapper */
-    height: auto; /* Maintain aspect ratio */
-  }
-
-  .product-card-cart h3,
-  .product-card-cart p {
-    text-align: center;
-  }
+    width: 30px;
+    height: 30px;
+    /* object-fit: cover; */
+    margin: 10px;
+}
+  
 }

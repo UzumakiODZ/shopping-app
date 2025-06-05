@@ -2,16 +2,11 @@
 .header {
     font-family: 'Pokemon Solid', sans-serif;
     background-color: inherit;
-    height: 10px;
-    margin-top: 5px;
-    padding: 20px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    position: fixed;
     top: 0;
     width: 100%;
-    z-index: 1000;
   }
   
   .logo {
@@ -24,23 +19,23 @@
   
   .nav-bar {
     display: flex;
-    gap: 600px;
+    justify-content: space-between;
+    width: 100%;
   }
-  .nav-pages {
-    display: flex;
-    justify-content: flex-start;
-  }
+
   .nav-links{
-    margin-left: 100%;
-    margin-right: 0%;
     display: flex;
     flex-direction: row;
-    padding-inline: 50%;
-    gap: 50%;
     font-size: 20%;
     font-weight: bold;
     color: yellow;
     -webkit-text-stroke: 2px black; 
+  }
+
+  .nav-pages{
+    display: flex;
+    width: 30%;
+    justify-content: space-around;
   }
   
   .nav-pages a {
@@ -53,12 +48,11 @@
   }
   
   .cart-count {
-    position: absolute;
-    margin-left: 80%;
-    margin-top: 70%;
+    position: relative;
+    margin-bottom: -5px;
+    margin-right: -5px;
     color: #fff;
     border-radius: 50%;
-    padding: 0 8px;
     font-size: 14px;
     z-index: 1;
   }
@@ -76,7 +70,6 @@
     }
   
     .nav-links {
-      flex-direction: column;
       gap: 10px;
     }
   
