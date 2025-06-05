@@ -1,7 +1,4 @@
-.html{
-  height: max-content;
 
-}
 .cart {
   display: flex;
   justify-content: center;
@@ -30,7 +27,7 @@
   
 }
 
-.itemlistchild button {
+button {
   background-color: green;
   color: white;
   border: none;

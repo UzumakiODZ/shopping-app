@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import '/src/styles/Product.css'; 
 
 const Product = ({ product, updateAmt, removeFromCart }) => {
   const { name, image, price, description, id, amt } = product;
@@ -19,9 +20,14 @@ const Product = ({ product, updateAmt, removeFromCart }) => {
       <p>{description}</p>
       <p>${price}</p>
       <div className="button-container">
-        <button onClick={handleAddToCart}>Add to Cart</button>
-        {amt > 0 && (
-          <button onClick={handleRemoveFromCart}>Remove from Cart</button>
+        {amt > 0 ? (
+          <div style={{ display: 'flex', flexDirection: 'row',alignItems: 'center' ,justifyContent: 'center' }}>
+            <button onClick={handleRemoveFromCart}>-</button>
+            <span style={{ margin: '0 10px' }}>{amt}</span>
+            <button onClick={handleAddToCart}>+</button>
+          </div>
+        ) : (
+          <button onClick={handleAddToCart}>Add to Cart</button>
         )}
       </div>
     </div>
