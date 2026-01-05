@@ -1,5 +1,5 @@
-import React, { forwardRef } from 'react';
-import Header from './Header';
+import React,{ forwardRef } from 'react';
+import Banner from '../banner/Banner';
 import Items from './Item';
 import '/src/styles/HomePage.css';
 
@@ -8,12 +8,12 @@ const HomePage = forwardRef(({ productData, updateAmt, removeFromCart }, ref) =>
 
   return (
     <div ref={ref}>
-      <Header cartItemCount={cartItemCount} />
       <div className='title-parent'>
         <div className='title-child'>
-          <h2>The Pokemon Mart</h2>
+          <h5>The Pokemon Mart</h5>
         </div>
-        <div className='items'>
+        <Banner />
+        <div className='flex justify-center'>
           <Items 
             productData={productData} 
             updateAmt={updateAmt} 

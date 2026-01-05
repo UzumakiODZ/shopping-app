@@ -1,5 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&family=Tiny5&display=swap');
 
+@theme {
+  --font-pixelify: 'Pixelify Sans', sans-serif;
+  --font-tiny5: 'Tiny5', sans-serif;
+  --font-pokemon: 'Pokemon Solid', sans-serif;
+}
 
 body {
   background-color: aliceblue;
@@ -14,9 +19,10 @@ body {
 .title-child {
   font-family: 'Pokemon Solid', sans-serif;
   display: flex;
+  font-size: 4rem;
   justify-content: center;
   align-items: center;
-  color: #ffcc00;
+  color: yellow;
   -webkit-text-stroke: 2px black;
 }
 

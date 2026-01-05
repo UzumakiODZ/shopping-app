@@ -14,7 +14,7 @@ const Product = ({ product, updateAmt, removeFromCart }) => {
   };
 
   return (
-    <div className="product-card">
+    <div className="flex sm:w-[150px] flex-col justify-between border p-4 rounded-lg shadow-md text-black text-center" style={{fontFamily: "Pixelify Sans"}}>
       <img src={image} alt={name} className="product-image" />
       <div className="product-title">{name}</div>
       <p>{description}</p>

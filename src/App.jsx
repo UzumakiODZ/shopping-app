@@ -1,11 +1,14 @@
-import React, { useState, useEffect } from 'react';
+import React,{ useState, useEffect } from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import HomePage from './components/HomePage';
-import Cart from './components/Cart';
+import { Outlet } from 'react-router-dom';
+import Header from './components/Header';
+import HomePage from './components/homepage/HomePage';
+import Cart from './components/cart/Cart';
 import PotionImage from './assets/Potion.jpeg';
 import PokeballImage from './assets/pokeball.png';
 import ReviveImage from './assets/revive.png';
 import RepelImage from './assets/repel.png';
+import Footer from './components/Footer';
 
 const defaultProductData = [
   {
@@ -37,6 +40,17 @@ const defaultProductData = [
     amt: 0,
   },
 ];
+
+// Layout component defined here since it needs access to cartItemCount
+const Layout = ({ cartItemCount }) => {
+  return (
+    <>
+      <Header cartItemCount={cartItemCount} />
+      <Outlet />
+      <Footer />
+    </>
+  );
+};
 
 function App() {
   const [productData, setProductData] = useState(() => {
@@ -75,18 +89,22 @@ function App() {
     );
   };
 
+  const cartItemCount = productData.reduce((total, product) => total + product.amt, 0);
+
   return (
     <Router>
       <div className="App">
         <Routes>
-          <Route 
-            path="/" 
-            element={<HomePage productData={productData} updateAmt={updateAmt} removeFromCart={removeFromCart} />} 
-          />
-          <Route 
-            path="/cart" 
-            element={<Cart productData={productData} updateAmt={updateAmt} removeFromCart={removeFromCart} />} 
-          />
+          <Route path="/" element={<Layout cartItemCount={cartItemCount} />} >
+            <Route 
+              path="/" 
+              element={<HomePage productData={productData} updateAmt={updateAmt} removeFromCart={removeFromCart} />} 
+            />
+            <Route 
+              path="/cart" 
+              element={<Cart productData={productData} updateAmt={updateAmt} removeFromCart={removeFromCart} />} 
+            />
+          </Route>
         </Routes>
       </div>
     </Router>

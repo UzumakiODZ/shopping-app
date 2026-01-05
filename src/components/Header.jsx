@@ -7,15 +7,17 @@ const Header = ({ cartItemCount }) => {
   return (
     <header className="header">
       <nav className="nav-bar">
-        <div className="logo">The Pokemon Store</div>
+        <div className="logo">The Pokemon Mart</div>
         <div className='nav-pages'>
           <Link className='nav-links' to="/">Home</Link>
-          <div className='group-cart'>
-          <Link className='nav-links' to="/cart">
-            <img src={CartImage} alt="Cart" height="50px"/>
-             <span className="cart-count">{cartItemCount}</span>
+          <Link to="/cart" className='relative inline-block  '>
+            <img className='w-8 h-8' src={CartImage} alt="Cart"/>
+            {cartItemCount > 0 && (
+              <span className="absolute -bottom-2 -right-2 text-black text-xs rounded-full w-5 h-5 flex ">
+                {cartItemCount}
+              </span>
+            )}
           </Link>
-          </div>
         </div>
       </nav>
     </header>

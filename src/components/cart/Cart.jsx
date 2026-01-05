@@ -1,5 +1,4 @@
 import React from 'react';
-import Header from './Header';
 import ProductList from './CheckoutItem'; 
 import "/src/styles/Cart.css";
 
@@ -16,11 +15,9 @@ const Cart = ({ productData, updateAmt, removeFromCart }) => {
   
   const totalPrice = calculateTotalPrice(productData);
 
-  const cartItemCount = productData.reduce((acc, product) => acc + product.amt, 0);
 
   return (
     <div>
-      <Header cartItemCount={cartItemCount}/>
       <div className='cart'>
         <div className='itemlistparent'>
           <div className='itemlistchild'>

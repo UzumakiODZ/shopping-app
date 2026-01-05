@@ -34,7 +34,7 @@
 
   .nav-pages{
     display: flex;
-    width: 30%;
+    gap: 15px;
     justify-content: space-around;
   }
   
@@ -45,19 +45,6 @@
   
   .nav-pages a:hover {
     text-decoration: underline;
-  }
-  
-  .cart-count {
-    position: relative;
-    margin-bottom: -5px;
-    margin-right: -5px;
-    color: #fff;
-    border-radius: 50%;
-    font-size: 14px;
-    z-index: 1;
-  }
-  .group-cart{
-    position: relative;
   }
   
   @media (max-width: 768px) {
@@ -80,7 +67,7 @@
   
   @media (max-width: 480px) {
     .header {
-      padding: 10px;
+      padding: 0.1rem;
     }
   
     .logo {

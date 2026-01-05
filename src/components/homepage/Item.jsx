@@ -1,14 +1,14 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Product from './Product'; // Changed to 'Product' from 'ItemList'
+import Product from './Product';
 
 const Items = ({ productData, updateAmt, removeFromCart }) => {
   if (!productData || !Array.isArray(productData)) {
     return <div>No products available.</div>; 
   }
-
+  
   return (
-    <div className="shopping-page">
+    <div className="w-[80%] grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4 p-4">
       {productData.map((product) => (
         <Product
           key={product.id}
