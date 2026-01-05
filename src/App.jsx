@@ -1,14 +1,17 @@
 import React,{ useState, useEffect } from 'react';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import { Outlet } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Routes, Outlet } from 'react-router-dom';
 import Header from './components/Header';
 import HomePage from './components/homepage/HomePage';
 import Cart from './components/cart/Cart';
+import Footer from './components/Footer';
+import Profile from './components/profile/Profile';
+
 import PotionImage from './assets/Potion.jpeg';
 import PokeballImage from './assets/pokeball.png';
 import ReviveImage from './assets/revive.png';
 import RepelImage from './assets/repel.png';
-import Footer from './components/Footer';
+
+import './App.css';
 
 const defaultProductData = [
   {
@@ -41,7 +44,7 @@ const defaultProductData = [
   },
 ];
 
-// Layout component defined here since it needs access to cartItemCount
+
 const Layout = ({ cartItemCount }) => {
   return (
     <>
@@ -93,7 +96,6 @@ function App() {
 
   return (
     <Router>
-      <div className="App">
         <Routes>
           <Route path="/" element={<Layout cartItemCount={cartItemCount} />} >
             <Route 
@@ -104,9 +106,12 @@ function App() {
               path="/cart" 
               element={<Cart productData={productData} updateAmt={updateAmt} removeFromCart={removeFromCart} />} 
             />
+            <Route
+              path="/profile"
+              element = {<Profile />}
+            />
           </Route>
         </Routes>
-      </div>
     </Router>
   );
 }

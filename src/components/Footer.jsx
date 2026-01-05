@@ -2,7 +2,7 @@ import React from 'react';
 
 const Footer = () => {
     return (
-        <div className="flex flex-col" style={{fontFamily: "Pixelify Sans"}}>
+        <div className="flex flex-col " style={{fontFamily: "Pixelify Sans"}}>
             <div className='text-center'>The Pokemon Mart</div>
             <div className='flex flex-col sm:flex-row justify-between p-4'>
                 <div>
