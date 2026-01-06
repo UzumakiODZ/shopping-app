@@ -5,6 +5,8 @@ import HomePage from './components/homepage/HomePage';
 import Cart from './components/cart/Cart';
 import Footer from './components/Footer';
 import Profile from './components/profile/Profile';
+import ProductInfo from './components/product/ProductInfo';
+import ProductSearch from './components/product/ProductSearchResults';
 
 import PotionImage from './assets/Potion.jpeg';
 import PokeballImage from './assets/pokeball.png';
@@ -43,7 +45,6 @@ const defaultProductData = [
     amt: 0,
   },
 ];
-
 
 const Layout = ({ cartItemCount }) => {
   return (
@@ -99,16 +100,28 @@ function App() {
         <Routes>
           <Route path="/" element={<Layout cartItemCount={cartItemCount} />} >
             <Route 
-              path="/" 
+              index
               element={<HomePage productData={productData} updateAmt={updateAmt} removeFromCart={removeFromCart} />} 
             />
             <Route 
-              path="/cart" 
+              path="cart" 
               element={<Cart productData={productData} updateAmt={updateAmt} removeFromCart={removeFromCart} />} 
             />
             <Route
-              path="/profile"
-              element = {<Profile />}
+              path="profile"
+              element={<Profile />}
+            />
+            <Route
+              path="product"
+              element={<ProductInfo />}
+            />
+            <Route
+              path="search"
+              element={<ProductSearch productData={productData} updateAmt={updateAmt} removeFromCart={removeFromCart} />}
+            />
+            <Route
+              path="product-info"
+              element={<ProductInfo />}
             />
           </Route>
         </Routes>

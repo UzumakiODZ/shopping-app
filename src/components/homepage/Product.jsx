@@ -1,27 +1,39 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { useNavigate } from 'react-router-dom';
 import '/src/styles/Product.css'; 
 
 const Product = ({ product, updateAmt, removeFromCart }) => {
   const { name, image, price, description, id, amt } = product;
+  const navigate = useNavigate();
 
-  const handleAddToCart = () => {
+  const handleNavigate = () => {
+    navigate(`/product?id=${id}`);
+  };
+
+  const handleAddToCart = (e) => {
+    e.stopPropagation(); 
     updateAmt(id);
   };
 
-  const handleRemoveFromCart = () => {
+  const handleRemoveFromCart = (e) => {
+    e.stopPropagation(); 
     removeFromCart(id);
   };
 
   return (
-    <div className="flex sm:w-[150px] flex-col justify-between border p-4 rounded-lg shadow-md text-black text-center" style={{fontFamily: "Pixelify Sans"}}>
+    <div 
+      onClick={handleNavigate} 
+      className="cursor-pointer flex sm:w-[150px] flex-col justify-between border p-4 rounded-lg shadow-md text-black text-center hover:shadow-lg transition-shadow" 
+      style={{fontFamily: "Pixelify Sans"}}
+    >
       <img src={image} alt={name} className="product-image" />
       <div className="product-title">{name}</div>
       <p>{description}</p>
       <p>${price}</p>
       <div className="button-container">
         {amt > 0 ? (
-          <div style={{ display: 'flex', flexDirection: 'row',alignItems: 'center' ,justifyContent: 'center' }}>
+          <div style={{ display: 'flex', flexDirection: 'row', alignItems: 'center', justifyContent: 'center' }}>
             <button onClick={handleRemoveFromCart}>-</button>
             <span style={{ margin: '0 10px' }}>{amt}</span>
             <button onClick={handleAddToCart}>+</button>
