@@ -19,6 +19,7 @@ Check out the live demo of the app here: [Shopping Cart App](https://shopping-ap
 - **Frontend:**
   - React.js
   - HTML5
+  - Tailwind CSS
   - CSS3 (Responsive design with media queries)
 - **Deployment:**
   - Hosted on Vercel
